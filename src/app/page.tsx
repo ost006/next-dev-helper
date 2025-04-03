@@ -9,7 +9,14 @@ import Keccak256Hash from './components/Keccak256Hash';
 
 export default function Home() {
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const gmtOffset = new Date().toLocaleTimeString('en-US', { timeZoneName: 'short' }).split(' ')[1];
+  const gmtOffset = (() => {
+    const date = new Date();
+    const offset = -date.getTimezoneOffset();
+    const sign = offset >= 0 ? '+' : '-';
+    const hours = String(Math.floor(Math.abs(offset) / 60)).padStart(2, '0');
+    const minutes = String(Math.abs(offset) % 60).padStart(2, '0');
+    return `GMT${sign}${hours}:${minutes}`;
+  })();
 
   return (
     <main className="min-h-screen p-8 bg-slate-900">
