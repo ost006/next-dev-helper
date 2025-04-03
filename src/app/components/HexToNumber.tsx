@@ -25,6 +25,7 @@ export default function HexToNumber() {
       }
       setNumberResult(num.toString());
     } catch (error) {
+      console.error('Conversion error:', error);
       setNumberResult('Invalid hex number');
     }
   };

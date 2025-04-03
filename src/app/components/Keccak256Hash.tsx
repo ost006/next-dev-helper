@@ -31,6 +31,7 @@ export default function Keccak256Hash() {
       }
       setHashResult(hash);
     } catch (error) {
+      console.error('Hash calculation error:', error);
       setHashResult('Invalid input');
     }
   };

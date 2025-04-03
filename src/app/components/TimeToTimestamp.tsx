@@ -30,6 +30,7 @@ export default function TimeToTimestamp({ timezone, gmtOffset }: TimeToTimestamp
       const timestamp = Math.floor(date.getTime() / 1000);
       setTimestampResult(timestamp.toString());
     } catch (error) {
+      console.error('Conversion error:', error);
       setTimestampResult('Invalid date format');
     }
   };

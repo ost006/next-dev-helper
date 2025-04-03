@@ -24,6 +24,7 @@ export default function TimestampToTime({ timezone, gmtOffset }: TimestampToTime
       const date = new Date(parseInt(timestamp) * 1000);
       setCurrentTimeResult(date.toLocaleString());
     } catch (error) {
+      console.error('Conversion error:', error);
       setCurrentTimeResult('Invalid timestamp');
     }
   };

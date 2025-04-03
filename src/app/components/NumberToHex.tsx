@@ -23,6 +23,7 @@ export default function NumberToHex() {
       }
       setHexResult(`0x${num.toString(16)}`);
     } catch (error) {
+      console.error('Conversion error:', error);
       setHexResult('Invalid number');
     }
   };
