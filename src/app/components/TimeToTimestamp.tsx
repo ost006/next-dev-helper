@@ -37,10 +37,10 @@ export default function TimeToTimestamp({ timezone, gmtOffset }: TimeToTimestamp
 
   return (
     <div className="bg-slate-800 p-6 rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4 text-white flex items-center">
+      <h2 className="text-xl font-semibold mb-4 text-white">
         Current Time to Timestamp
-        <span className="ml-2 text-xs text-slate-400">({timezone} {gmtOffset})</span>
       </h2>
+      <p className="text-xs text-slate-400 -mt-3 mb-4">({timezone} {gmtOffset})</p>
       <div className="space-y-4">
         <div className="relative">
           <input
